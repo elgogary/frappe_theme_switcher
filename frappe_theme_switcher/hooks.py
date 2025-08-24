@@ -28,6 +28,15 @@ app_license = "mit"
 # app_include_css = "/assets/frappe_theme_switcher/css/frappe_theme_switcher.css"
 # app_include_js = "/assets/frappe_theme_switcher/js/frappe_theme_switcher.js"
 
+app_include_css = [
+    "/assets/frappe_theme_switcher/css/frappe_theme_switcher.css"
+]
+
+app_include_js = [
+    "/assets/frappe_theme_switcher/js/theme_switcher.js"
+]
+
+
 # include js, css files in header of web template
 # web_include_css = "/assets/frappe_theme_switcher/css/frappe_theme_switcher.css"
 # web_include_js = "/assets/frappe_theme_switcher/js/frappe_theme_switcher.js"
@@ -177,6 +186,10 @@ app_license = "mit"
 # override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "frappe_theme_switcher.event.get_events"
 # }
+override_whitelisted_methods = {
+    "frappe.core.doctype.user.user.switch_theme": "frappe_theme_switcher.override.switch_theme"
+}
+
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
