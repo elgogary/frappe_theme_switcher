@@ -29,7 +29,8 @@ app_license = "mit"
 # app_include_js = "/assets/frappe_theme_switcher/js/frappe_theme_switcher.js"
 
 app_include_css = [
-    "/assets/frappe_theme_switcher/css/frappe_theme_switcher.css"
+    "/assets/frappe_theme_switcher/css/frappe_theme_switcher.css",
+    "/assets/frappe_theme_switcher/css/cotton_candy.css",
 ]
 
 app_include_js = [

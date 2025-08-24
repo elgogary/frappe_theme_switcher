@@ -1,0 +1,294 @@
+/* ============================
+   Fonts (Tajawal + Roboto)
+   ============================ */
+
+
+/* Arabic font: Tajawal */
+
+@font-face {
+    font-family: 'ERPFont';
+    src: url('/assets/frappe_theme_switcher/fonts/Tajawal-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+@font-face {
+    font-family: 'ERPFont';
+    src: url('/assets/frappe_theme_switcher/fonts/Tajawal-Light.ttf') format('truetype');
+    font-weight: 300;
+    unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+@font-face {
+    font-family: 'ERPFont';
+    src: url('/assets/frappe_theme_switcher/fonts/Tajawal-Regular.ttf') format('truetype');
+    font-weight: 400;
+    unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+@font-face {
+    font-family: 'ERPFont';
+    src: url('/assets/frappe_theme_switcher/fonts/Tajawal-Medium.ttf') format('truetype');
+    font-weight: 500;
+    unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+@font-face {
+    font-family: 'ERPFont';
+    src: url('/assets/frappe_theme_switcher/fonts/Tajawal-Bold.ttf') format('truetype');
+    font-weight: 700;
+    unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+@font-face {
+    font-family: 'ERPFont';
+    src: url('/assets/frappe_theme_switcher/fonts/Tajawal-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+@font-face {
+    font-family: 'ERPFont';
+    src: url('/assets/frappe_theme_switcher/fonts/Tajawal-Black.ttf') format('truetype');
+    font-weight: 900;
+    unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+
+/* English font: Roboto */
+
+@font-face {
+    font-family: 'ERPFont';
+    src: url('/assets/frappe_theme_switcher/fonts/Roboto-Thin.ttf') format('truetype');
+    font-weight: 100;
+    unicode-range: U+0000-00FF;
+}
+
+@font-face {
+    font-family: 'ERPFont';
+    src: url('/assets/frappe_theme_switcher/fonts/Roboto-Light.ttf') format('truetype');
+    font-weight: 300;
+    unicode-range: U+0000-00FF;
+}
+
+@font-face {
+    font-family: 'ERPFont';
+    src: url('/assets/frappe_theme_switcher/fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+    unicode-range: U+0000-00FF;
+}
+
+@font-face {
+    font-family: 'ERPFont';
+    src: url('/assets/frappe_theme_switcher/fonts/Roboto-Medium.ttf') format('truetype');
+    font-weight: 500;
+    unicode-range: U+0000-00FF;
+}
+
+@font-face {
+    font-family: 'ERPFont';
+    src: url('/assets/frappe_theme_switcher/fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700;
+    unicode-range: U+0000-00FF;
+}
+
+@font-face {
+    font-family: 'ERPFont';
+    src: url('/assets/frappe_theme_switcher/fonts/Roboto-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    unicode-range: U+0000-00FF;
+}
+
+
+/* ============================
+   Cotton Candy Theme Overrides
+   ============================ */
+
+[data-theme=cotton_candy] body,
+[data-theme=cotton_candy] * {
+    font-family: 'ERPFont', sans-serif !important;
+}
+
+
+/* Navbar */
+
+[data-theme=cotton_candy] .navbar {
+    height: 48px;
+    background: linear-gradient(179deg, rgb(56 178 208) 0%, #1a7e81 100%);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0;
+}
+
+[data-theme=cotton_candy] .navbar-expand {
+    background: linear-gradient(179deg, rgb(56 178 208) 0%, #1a7e81 100%);
+}
+
+[data-theme=cotton_candy] .navbar .navbar-nav .nav-link {
+    padding: 0;
+    color: white;
+}
+
+
+/* Breadcrumbs */
+
+[data-theme=cotton_candy] #navbar-breadcrumbs {
+    margin-left: var(--margin-md);
+    font-size: var(--text-base);
+    font-weight: var(--weight-regular);
+    letter-spacing: .02em;
+    color: white;
+}
+
+[data-theme=cotton_candy] #navbar-breadcrumbs a {
+    margin-right: 10px;
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+[data-theme=cotton_candy] #navbar-breadcrumbs li.disabled a {
+    color: white;
+    pointer-events: none;
+}
+
+[data-theme=cotton_candy] #navbar-breadcrumbs>li>a::before {
+    content: "|";
+    font-size: 12px;
+    font-weight: normal;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    transition: 0.2s;
+    top: 3px;
+}
+
+
+/* Avatar */
+
+[data-theme=cotton_candy] .avatar .standard-image {
+    border-radius: 50%;
+    border: none;
+    color: black !important;
+    background-color: white !important;
+}
+
+
+/* Search */
+
+[data-theme=cotton_candy] .search-bar .awesomplete input {
+    width: 100% !important;
+    padding-left: 36px;
+    font-size: var(--text-sm);
+    font-weight: var(--weight-regular);
+    background: white;
+}
+
+[data-theme=cotton_candy] .search-bar .awesomplete input:focus {
+    background: white;
+}
+
+
+/* Notifications Icon */
+
+[data-theme=cotton_candy] .navbar-nav .dropdown-notifications .notifications-seen svg.es-icon.icon-sm,
+[data-theme=cotton_candy] .navbar-nav .dropdown-notifications .notifications-seen svg.es-icon.icon-sm use {
+    fill: white !important;
+    color: white !important;
+    stroke: white !important;
+}
+
+
+/* Sidebar */
+
+[data-theme=cotton_candy] .layout-side-section {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-regular);
+    letter-spacing: .02em;
+    padding-right: 30px;
+    background: #f7f7f7;
+    border-radius: 20px;
+    padding-top: 30px;
+}
+
+[data-theme=cotton_candy] .desk-sidebar-item.selected {
+    background-color: white !important;
+    color: #2a2c36 !important;
+    font-weight: bold !important;
+    margin-right: -20px !important;
+    border-top-left-radius: 10px !important;
+    border-bottom-left-radius: 10px !important;
+    height: 40px !important;
+}
+
+[data-theme=cotton_candy] .desk-sidebar-item:hover {
+    background-color: #f5f5f5;
+    color: #2a2c36;
+    border-radius: 0 10px 10px 0;
+    margin-right: -20px !important;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+
+/* Inputs */
+
+[data-theme=cotton_candy] .form-control:focus {
+    outline: 0;
+    border: 1px solid #1a7e81;
+    background: #f7f7f7 !important;
+}
+
+
+/* Buttons */
+
+[data-theme=cotton_candy] .btn-primary {
+    color: white !important;
+    background-color: #1a7e81 !important;
+    border-radius: 5px !important;
+}
+
+[data-theme=cotton_candy] .btn-primary:hover {
+    background-color: #f7f7f7 !important;
+    color: #0a0a0a !important;
+}
+
+[data-theme=cotton_candy] .btn-secondary {
+    border-radius: 5px !important;
+    transition: background-color ease-in-out .15s;
+}
+
+
+/* Layout Zoom */
+
+[data-theme=cotton_candy] body {
+    zoom: 125% !important;
+}
+
+@media (max-width: 1024px) {
+    [data-theme=cotton_candy] body {
+        zoom: 100% !important;
+    }
+}
+
+
+/* Dropdowns */
+
+[data-theme=cotton_candy] .dropdown-menu {
+    padding: 4px;
+    font-size: var(--text-base);
+    font-weight: var(--weight-regular);
+    letter-spacing: .02em;
+    max-height: 500px;
+    overflow: auto;
+    border: 1px solid var(--subtle-accent);
+    zoom: .88 !important;
+}
+
+[data-theme=cotton_candy] .filter-popover {
+    min-width: 500px;
+    min-height: 50px;
+    font-size: var(--text-base);
+    font-weight: var(--weight-regular);
+    letter-spacing: .02em;
+    border: 1px solid var(--border-color);
+    z-index: 1019;
+    zoom: .80 !important;
+}
