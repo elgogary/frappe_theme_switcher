@@ -1,9 +1,518 @@
-@import "./cotton_candy.bundle.css";
-@import "./cherry.bundle.css";
-@import "./apricot.bundle.css";
-@import "./watermelon.bundle.css";
+/* ============================
+   Default Logo + Splash
+   ============================ */
 
 .app-logo {
-    min-height: 55px !important;
-    width: auto !important;
+    background: url('/assets/frappe_theme_switcher/images/logo-default.png') no-repeat center center;
+    background-size: contain;
+    height: 60px;
+    width: 160px;
+}
+
+
+/* Splash Icon (loading screen logo) */
+
+.web-logo,
+.splash-logo {
+    background: url('/assets/frappe_theme_switcher/images/splash-default.png') no-repeat center center;
+    background-size: contain;
+    height: 120px;
+    width: 120px;
+    margin: auto;
+}
+
+@font-face {
+    font-family: 'ERPFontLatin';
+    src: url('/assets/frappe_theme_switcher/fonts/Inter_18pt-Regular.ttf') format('truetype');
+    font-weight: 400;
+    unicode-range: U+0000-00FF;
+}
+
+@font-face {
+    font-family: 'ERPFontLatin';
+    src: url('/assets/frappe_theme_switcher/fonts/Inter_18pt-Medium.ttf') format('truetype');
+    font-weight: 500;
+    unicode-range: U+0000-00FF;
+}
+
+@font-face {
+    font-family: 'ERPFontLatin';
+    src: url('/assets/frappe_theme_switcher/fonts/Inter_18pt-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    unicode-range: U+0000-00FF;
+}
+
+@font-face {
+    font-family: 'ERPFontLatin';
+    src: url('/assets/frappe_theme_switcher/fonts/Inter_24pt-Bold.ttf') format('truetype');
+    font-weight: 700;
+    unicode-range: U+0000-00FF;
+}
+
+font-face {
+    font-family: 'ERPFontArabic';
+    src: url('/assets/frappe_theme_switcher/fonts/ArbFONTS-DINNextLTArabic-Light-1.ttf') format('truetype');
+    font-weight: 300;
+    unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+@font-face {
+    font-family: 'ERPFontArabic';
+    src: url('/assets/frappe_theme_switcher/fonts/ArbFONTS-DINNextLTArabic-Regular-2.ttf') format('truetype');
+    font-weight: 400;
+    unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+@font-face {
+    font-family: 'ERPFontArabic';
+    src: url('/assets/frappe_theme_switcher/fonts/ArbFONTS-DINNextLTArabic-Medium-2.ttf') format('truetype');
+    font-weight: 500;
+    unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+@font-face {
+    font-family: 'ERPFontArabic';
+    src: url('/assets/frappe_theme_switcher/fonts/ArbFONTS-DINNextLTArabic-Bold-2.ttf') format('truetype');
+    font-weight: 700;
+    unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+@font-face {
+    font-family: 'ERPFontArabic';
+    src: url('/assets/frappe_theme_switcher/fonts/ArbFONTS-DINNextLTArabic-Heavy-1.ttf') format('truetype');
+    font-weight: 800;
+    unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+body,
+* {
+    font-family: 'ERPFontArabic', 'ERPFontLatin', sans-serif !important;
+}
+
+
+/* ============================
+   Root Variables
+   ============================ */
+
+:root {
+    --btn-border: 1px solid #808080;
+    --card-shadow: 6px 2px 12px 0px #4D4D4D14;
+    --card-bg: #FFFFFF;
+    --section-border: 0.5px solid #CCCCCC;
+}
+
+
+/* ============================
+   ATS General (applies to ALL themes)
+   ============================ */
+
+
+/* Base Page */
+
+.page-container {
+    background-color: #F2F2F2;
+}
+
+.page-head {
+    z-index: 6;
+    position: sticky;
+    top: var(--navbar-height);
+    background: #F2F2F2;
+    margin-bottom: 5px;
+    transition: .5s top;
+}
+
+.page-head .page-head-content {
+    height: var(--page-head-height);
+    padding: 8px 20px 8px 0px;
+}
+
+.layout-side-section {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-regular);
+    letter-spacing: .02em;
+    opacity: 1;
+    border-radius: 20px;
+    margin: 0 30px 30px 0;
+    background: var(--card-bg);
+    border: var(--section-border);
+    box-shadow: var(--card-shadow);
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.desk-sidebar-item.selected {
+    background-color: #f1efefda !important;
+    color: #2a2c36 !important;
+    font-weight: bold !important;
+    margin-right: -20px !important;
+    position: relative !important;
+    z-index: 1 !important;
+    height: 40px!important;
+    /* Outward rounding on left */
+    border-top-left-radius: 10px !important;
+    border-bottom-left-radius: 10px !important;
+}
+
+[data-page-route=Workspaces] .standard-sidebar-item .item-anchor {
+    display: flex;
+    overflow: hidden;
+    padding: 3px 0 3px 8px;
+    flex: 1;
+    height: 30px;
+}
+
+.desk-sidebar-item:hover {
+    background-color: #f1efef79 !important;
+    color: #2a2c36 !important;
+    font-weight: bold !important;
+    margin-right: -20px !important;
+    position: relative !important;
+    z-index: 1 !important;
+    height: 40px!important;
+    /* Outward rounding on left */
+    border-top-left-radius: 10px !important;
+    border-bottom-left-radius: 10px !important;
+}
+
+@media (min-width: 992px) {
+    [data-page-route=Workspaces] .layout-main .layout-main-section {
+        border: 0px !important;
+        padding: var(--padding-md);
+        margin-bottom: var(--margin-sm);
+    }
+}
+
+[data-page-route=Workspaces] .layout-main .layout-main-section {
+    border: 0px !important;
+    padding: var(--padding-md);
+    margin-bottom: var(--margin-sm);
+}
+
+
+/* Layout Sections (shared) */
+
+.layout-main-section-wrapper {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-regular);
+    letter-spacing: .02em;
+    opacity: 1;
+    border-radius: 20px;
+    margin: 0 30px 30px 0;
+    background: var(--card-bg);
+    border: var(--section-border);
+    box-shadow: var(--card-shadow);
+    padding-top: 10px;
+    scrollbar-color: #f9f5f5 transparent;
+}
+
+@media (min-width: 992px) {
+    [data-page-route=Workspaces] .layout-main .layout-side-section,
+    [data-page-route=Workspaces] .layout-main .layout-main-section-wrapper {
+        height: 100%;
+        overflow-y: auto;
+        scrollbar-color: #f9f5f5 transparent;
+    }
+}
+
+[data-page-route=Workspaces] .layout-main .layout-main-section {
+    /* border: 1px solid var(--border-color); */
+    padding: var(--padding-md);
+    margin-bottom: var(--margin-sm);
+}
+
+.std-form-layout>.form-layout>.form-page {
+    border-radius: var(--border-radius-md) !important;
+    border: 0px !important;
+    box-shadow: none !important;
+    background-color: var(--card-bg) !important;
+}
+
+.layout-main-section.frappe-card {
+    overflow: hidden;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--card-shadow);
+    padding: 0;
+    background-color: var(--card-bg);
+    box-shadow: none;
+    border: 0px !important;
+    ;
+}
+
+.frappe-card {
+    /* border-radius: var(--border-radius-md); */
+    box-shadow: var(--card-shadow);
+    padding: var(--padding-sm);
+    background-color: var(--card-bg);
+    box-shadow: none;
+    border: 0px !important;
+    ;
+}
+
+
+/* ============================
+   General Buttons
+   ============================ */
+
+.btn.icon-btn.btn-default,
+div#driver-popover-item .driver-popover-footer button.icon-btn.btn-default,
+.btn.icon-btn.btn-secondary,
+div#driver-popover-item .driver-popover-footer button.icon-btn.btn-secondary,
+div#driver-popover-item .driver-popover-footer button.icon-btn.driver-prev-btn {
+    min-width: 28px;
+    border: var(--btn-border);
+    border-radius: 5px;
+}
+
+.page-actions .btn:not(.icon-btn),
+.page-actions div#driver-popover-item .driver-popover-footer button:not(.icon-btn),
+div#driver-popover-item .driver-popover-footer .page-actions button:not(.icon-btn) {
+    padding: 4px 8px;
+    border: var(--btn-border);
+    border-radius: 5px;
+}
+
+
+/* ============================
+   General Cards
+   ============================ */
+
+.layout-main-section.frappe-card {
+    overflow: hidden;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--card-shadow);
+    padding: 0;
+    background-color: var(--card-bg);
+    box-shadow: none;
+    border: 1px solid var(--border-color);
+}
+
+.frappe-card {
+    /* border-radius: var(--border-radius-md); */
+    /* box-shadow: var(--card-shadow); */
+    /* padding: var(--padding-sm); */
+    /* background-color: var(--card-bg); */
+    /* box-shadow: none; */
+    /* border: 1px solid var(--gray-300); */
+}
+
+
+/* ============================
+   Fonts (Tajawal + Roboto)
+   ============================ */
+
+@font-face {
+    font-family: 'ERPFont';
+    src: url('/assets/frappe_theme_switcher/fonts/Tajawal-Regular.ttf') format('truetype');
+    font-weight: 400;
+    unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+@font-face {
+    font-family: 'ERPFont';
+    src: url('/assets/frappe_theme_switcher/fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+    unicode-range: U+0000-00FF;
+}
+
+
+/* Apply ERPFont Globally */
+
+body {
+    font-family: 'ERPFont', sans-serif !important;
+}
+
+
+/* ============================
+   Navbar + Breadcrumbs
+   ============================ */
+
+#navbar-breadcrumbs {
+    margin-left: var(--margin-md);
+    font-size: var(--text-base);
+    font-weight: var(--weight-regular);
+    letter-spacing: .02em;
+    color: white;
+}
+
+#navbar-breadcrumbs a {
+    margin-right: 10px;
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+#navbar-breadcrumbs li.disabled a {
+    color: white;
+    pointer-events: none;
+}
+
+#navbar-breadcrumbs>li>a::before {
+    content: "|";
+    font-size: 12px;
+    font-weight: normal;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    transition: 0.2s;
+    top: 3px;
+}
+
+
+/* ============================
+   Avatar
+   ============================ */
+
+.avatar .standard-image {
+    border-radius: 50%;
+    border: none;
+    color: black !important;
+    background-color: white !important;
+}
+
+
+/* ============================
+   Search
+   ============================ */
+
+.search-bar .awesomplete input {
+    width: 100% !important;
+    height: 32px !important;
+    border-radius: 5px !important;
+    padding-left: 36px;
+    font-size: var(--text-sm);
+    font-weight: var(--weight-regular);
+    background: white;
+}
+
+.search-bar .awesomplete input:focus {
+    background: white;
+}
+
+
+/* ============================
+   Notifications
+   ============================ */
+
+.navbar-nav .dropdown-notifications .notifications-seen svg.es-icon.icon-sm,
+.navbar-nav .dropdown-notifications .notifications-seen svg.es-icon.icon-sm use {
+    fill: white !important;
+    stroke: white !important;
+}
+
+.es-icon {
+    fill: white !important;
+}
+
+
+/* ============================
+   Layout Zoom
+   ============================ */
+
+
+/* Layout Zoom */
+
+body {
+    zoom: 125% !important;
+}
+
+@media (max-width: 1024px) {
+    body {
+        zoom: 100% !important;
+    }
+}
+
+
+/* ============================
+   Dropdowns
+   ============================ */
+
+.dropdown-menu {
+    padding: 4px;
+    font-size: var(--text-base);
+    font-weight: var(--weight-regular);
+    letter-spacing: .02em;
+    max-height: 500px;
+    overflow: auto;
+    border: 1px solid var(--subtle-accent);
+    zoom: .88 !important;
+}
+
+.filter-popover {
+    min-width: 500px;
+    min-height: 50px;
+    font-size: var(--text-base);
+    font-weight: var(--weight-regular);
+    letter-spacing: .02em;
+    border: 1px solid var(--border-color);
+    z-index: 1019;
+    zoom: .80 !important;
+}
+
+
+/* custom_lang_toggle.css */
+
+
+/* custom_lang_toggle.css */
+
+.lang-toggle-wrapper,
+.lang-toggle-item {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 6px;
+    flex: 0 0 auto;
+    /* don't stretch */
+}
+
+.lang-toggle-btn {
+    margin: 0;
+    padding: 4px 10px;
+    white-space: nowrap;
+    /* keep on one line */
+}
+
+div#driver-popover-item {
+    padding: var(--padding-md) var(--padding-lg);
+    max-width: 350px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    zoom: .80;
+}
+
+.sidebar-menu {
+    font-size: 13px;
+    margin-top: 10px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.sidebar-menu li {
+    display: block;
+    /* يخلي كل عنصر ينزل سطر جديد */
+    margin-bottom: 6px;
+    /* مسافة بين السطور */
+    color: var(--text-muted);
+    /* يطبق اللون الرمادي */
+}
+
+.sidebar-menu li.modified-by {
+    font-weight: 500;
+    /* يبان أوضح */
+    color: var(--gray-700);
+    /* لون أغمق شوية */
+}
+
+.sidebar-menu li.created-by {
+    font-size: 12px;
+    color: var(--gray-500);
+    /* افتح من اللي فوق */
+}
+
+.sidebar-menu li.created-by a {
+    color: var(--primary);
+    /* الايميل بلون مميز */
+    text-decoration: none;
+}
+
+.sidebar-menu li.created-by a:hover {
+    text-decoration: underline;
 }

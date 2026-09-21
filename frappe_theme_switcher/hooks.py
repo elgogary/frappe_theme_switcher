@@ -31,6 +31,14 @@ app_license = "mit"
 app_include_css = [
     "/assets/frappe_theme_switcher/css/frappe_theme_switcher.css",
     "/assets/frappe_theme_switcher/css/cotton_candy.css",
+    
+    "/assets/frappe_theme_switcher/css/apricot.css",
+
+    "/assets/frappe_theme_switcher/css/cherry.css",
+    "/assets/frappe_theme_switcher/css/watermelon.css",
+    
+    
+    
 ]
 
 app_include_js = [
